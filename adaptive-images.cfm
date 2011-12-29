@@ -290,7 +290,7 @@
 		
 		try{
 			// does the directory exist already?
-			if(!directoryExists(directorya)){
+			if(!directoryExists(directory)){
 				directoryCreate(directory);
 				write_log("AI: Made=#directory#");
 			}
