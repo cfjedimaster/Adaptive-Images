@@ -184,8 +184,8 @@
 		resolution		= url.width;
 		res_directory	= resolution;
 	}
-	// work with the cookie value
-	else{ 
+	// work with the cookie value if exists
+	else if (structKeyExists(cookie,"resolution")){ 
 		write_log("AI: cookie.resolution=#cookie.resolution#");
 		for(res in resolutions) {
 			write_log("AI: res=#res#");
@@ -194,8 +194,11 @@
 				res_directory	= resolution;
 			}
 		}
+	// send mobile first
+	}else if(mobile_first){
+		resolution 	= resolutions[arrayLen(resolutions)];
 	}
-	// resolution set :emd
+	// resolution set :end
 	
 	write_log("AI: res=#resolution#");
 	
